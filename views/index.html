@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<title>BDSC车联网</title>
+		<!-- Bootstrap 核心 css 文件 -->
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="../static/js/jquery.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../static/js/bootstrap.min.js"></script>
+		<!--echarts JS-->
+		<script src="../static/js/echarts.min.js"></script>
+		<!-- 轮播swiper文件 -->
+		<link rel="stylesheet" type="text/css" href="../static/css/swiper.min.css">
+		<script src="../static/js/swiper.min.js"></script>
+		<!--界面样式-->
+		<!-- css 文件 -->
+		<link rel="stylesheet" href="../static/css/visual.css" />
+		<!-- JavaScript 文件 -->
+		<script src="../static/js/visual.js"></script>
+	</head>
+	
+	<body class="bg01">
+		<header class="header">
+			<h3>车联网监控平台</h3>
+		</header>
+		
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row fill-h">
+					<!--左边-->
+					<div class="col-lg-3 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<!-- 自定义内容 -->
+<!--								<div class="fill-h" id="xxx1"></div>-->
+							</div>
+						</div>
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<!-- 自定义内容 -->
+<!--								<div class="fill-h" id="xxx2"></div>-->
+							</div>
+						</div>
+					</div>
+					<!--中间-->
+					<div class="col-lg-6 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-1">
+							<div class="visual_conTop">
+								<div class="visual_conTop_box visual_conTop1">
+									<div>
+										<h3>车载请求数</h3>
+										<p class="p_css_center">0</p>
+<!--										<div class="conTop_smil">-->
+<!--											<a class="sz">日环比:<span>+3%</span><i class="fa fa-long-arrow-up"></i></a>-->
+<!--											<a class="xd">周环比:<span>-2%</span><i class="fa fa-long-arrow-down"></i></a>-->
+<!--										</div>-->
+									</div>
+								</div>
+								<div class="visual_conTop_box visual_conTop2">
+									<div>
+										<h3>请求完成数</h3>
+										<p class="p_css">0</p>
+										<div class="conTop_smil">
+											<a class="null">null</a>
+											<a class="xd">服务率<span>0%</span><i class="fa fa-long-arrow-down"></i></a>-->
+										</div>
+									</div>
+								</div>
+								<div class="visual_conTop_box visual_conTop1">
+									<div>
+										<h3>设备在线数(个)</h3>
+										<p class="p_css_center" id="total_dev_online_num">0</p>
+									</div>
+								</div>
+								<div class="visual_conTop_box visual_conTop2">
+									<div>
+										<h3>设备异常数(个)</h3>
+										<p class="p_css_center" id="total_dev_exc_num">0</p>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="visual_conBot">
+
+								<img class="visual_conBot_l" src="../static/img/ksh42.png">
+								<img class="visual_conBot_2" src="../static/img/ksh43.png">
+								<img class="visual_conBot_3" src="../static/img/ksh44.png">
+								<img class="visual_conBot_4" src="../static/img/ksh45.png">
+								<div class="visual_chart_text">
+									<h1>边缘-核心网络连接示意图</h1>
+								</div>
+
+								<!--中间区域边缘核心架构图显示-->
+								<div class="edge_core_Arch">
+									<!--左半边无线网特效线-->
+									<div class="line line1" id="line1"></div>
+									<div class="line line2" id="line2"></div>
+									<div class="line line3" id="line3"></div>
+									<div class="line line4" id="line4"></div>
+									<!--右半边无线网特效线-->
+									<div class="line line5" id="line5"></div>
+									<div class="line line6" id="line6"></div>
+									<div class="line line7" id="line7"></div>
+									<div class="line line8" id="line8"></div>
+									<!--中间有线网特效线-->
+									<div class="line line9"></div>
+									<div class="line line10"></div>
+									<div class="line line11"></div>
+									<div class="line line12"></div>
+
+									<!--核心网络动效-->
+									<div class="main_effect_out_box circle_effect_class">
+										<img class="effect_position main_data_effect" src="../static/img/main_data_effect.png">
+										<div class="effect_position across_remind_effect_out" style="width:76px;height:76px;margin:9px;">
+											<div class="across_remind_effect_in" style="width:68px;height:68px;margin:4px;"></div>
+										</div>
+										<img class="effect_position" src="../static/img/main_data_icon.png">
+										<span class="stage_title stage_around_title_core">核心网</span>
+									</div>
+
+									<!--MEC动效-->
+									<div class="circle_effect_class around_function_effect" style="top:220px;left:326px;">
+										<img class="effect_position around_data_effect_01 around_effect_resize" style="top:2px;left:3px;" src="../static/img/around_effect.png" alt="">
+										<div class="effect_position across_remind_effect_out across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_mec" src="../static/img/MEC.png">
+										</div>
+										<span class="stage_title stage_around_title">MEC</span>
+									</div>
+
+									<div class="circle_effect_class around_function_effect" style="top:220px;left:562px;">
+										<img class="effect_position around_data_effect_01 around_effect_resize" style="top:2px;left:3px;" src="../static/img/around_effect.png" alt="">
+										<div class="effect_position across_remind_effect_out across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_mec" src="../static/img/MEC.png">
+										</div>
+										<span class="stage_title stage_around_title">MEC</span>
+									</div>
+
+									<div class="circle_effect_class around_function_effect" style="top:115px;left:443px;">
+										<img class="effect_position around_data_effect_01 around_effect_resize" style="top:2px;left:3px;" src="../static/img/around_effect.png" alt="">
+										<div class="effect_position across_remind_effect_out across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_mec" src="../static/img/MEC.png">
+										</div>
+									</div>
+
+									<!--摄像头, 平板等UI-->
+									<div class="edge_effect_class" style="top:179px;left:92px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/camera.png">
+										</div>
+										<span class="stage_title stage_around_title_camera">摄像头</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;left:92px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/pad.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">平板</span>
+									</div>
+
+
+									<div class="edge_effect_class" style="top:179px;right:74px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/pad.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">平板</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;right:74px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/camera.png">
+										</div>
+										<span class="stage_title stage_around_title_camera">摄像头</span>
+									</div>
+
+									<!--OBU-->
+									<div class="edge_effect_class" style="top:179px;left:164px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/OBU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">OBU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;left:164px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/OBU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">OBU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:179px;right:146px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/OBU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">OBU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;right:146px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/OBU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">OBU</span>
+									</div>
+
+									<!--RSU-->
+									<div class="edge_effect_class" style="top:179px;left:243px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/RSU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">RSU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;left:243px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/RSU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">RSU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:179px;right:225px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/RSU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">RSU</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:260px;right:225px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/RSU.png">
+										</div>
+										<span class="stage_title stage_around_title_pad">RSU</span>
+									</div>
+
+									<!--云服务器-->
+									<div class="edge_effect_class" style="top:319px;left:440px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/cloud_server.png">
+										</div>
+										<span class="stage_title stage_around_title_cloud_server">云服务器</span>
+									</div>
+
+									<div class="edge_effect_class" style="top:371px;left:443px;">
+										<div class="effect_position across_remind_effect_out_ard">
+											<img class="effect_position effect_img_resize_camera" src="../static/img/icon-ui.png">
+										</div>
+										<span class="stage_title stage_around_title_cloud_server">监控平台UI</span>
+									</div>
+
+
+								</div>
+
+								<!--中间区域设备在线情况显示-->
+								<div class="visual_conBot_bot">
+									<div class="visual_conBot_bot_left">
+										<h3 class="h3_css">边缘网设备在线情况</h3>
+
+										<div class="visual_conBot_bot_left_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/camera.png" alt="">
+												<p>摄像头</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="camera_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="camera_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="visual_conBot_bot_left_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/pad.png" alt="">
+												<p>平板</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="edge_pad_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="edge_pad_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="visual_conBot_bot_left_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/RSU.png" alt="">
+												<p>RSU</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="RSU_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="RSU_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="visual_conBot_bot_left_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/OBU.png" alt="">
+												<p>OBU</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="OBU_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="OBU_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="visual_conBot_bot_right">
+										<h3 class="h3_css">核心网设备在线情况</h3>
+										<div class="visual_conBot_bot_right_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/MEC.png" alt="">
+												<p>MEC</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="MEC_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="MEC_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+										<div class="visual_conBot_bot_right_unit">
+											<div class="img_text_unit">
+												<img src="../static/img/pad.png" alt="">
+												<p>平板</p>
+												<div class="text_unit">
+													<p style="color:#12fe81;">正常</p>
+													<p style="color:#12fe81;" id="core_pad_online_num">0</p>
+												</div>
+												<div class="text_unit">
+													<p style="color:#fe3e12;">异常</p>
+													<p style="color:#fe3e12;" id="core_pad_exc_num">0</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--右边-->
+					<div class="col-lg-3 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-3">
+							<div class="xpanel">
+								<!-- 资源使用情况显示功能 -->
+								<div class="swiper-container visual_swiper" style="height:100%">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"  id="resourceUsage1"></div>
+										<div class="swiper-slide"  id="resourceUsage2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="xpanel-wrapper xpanel-wrapper-3">
+							<div class="xpanel">
+								<!-- 自定义内容 -->
+								<!--<div class="fill-h" id="xxx2"></div>-->
+							</div>
+						</div>
+						<div class="xpanel-wrapper xpanel-wrapper-3">
+							<div class="xpanel">
+								<!-- 自定义内容 -->
+								<!--<div class="fill-h" id="xxx2"></div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			//websocket
+			$(function() {
+				let ws = new WebSocket('ws://' + window.location.host + '/ws');
+				ws.onmessage = function(msg) {
+					let jsonData = JSON.parse(msg.data)
+					console.log(jsonData)
+					//添加返回消息 告诉服务器 此页面还存在
+					//{"message":"data"}
+					// let obj = {};
+					// obj.message = 'index.html 还活着 ' + new Date().toLocaleString();
+					// obj = JSON.stringify(obj);
+					// ws.send(obj);
+					switch (jsonData.msgType){
+						case "DeviceStatisticsModule":
+							let onlineDevice = jsonData.changedDevice + "_online_num"
+							let totalOnlineDevice = "total_dev_online_num"
+							let excDevice = jsonData.changedDevice + "_exc_num"
+							let totalExcDevice = "total_dev_exc_num"
+							$("#"+onlineDevice).text(jsonData.devOnlineNum)
+							$("#"+totalOnlineDevice).text(jsonData.totalDevOnlineNum)
+							$("#"+excDevice).text(jsonData.devExcNum)
+							$("#"+totalExcDevice).text(jsonData.totalDevExcNum)
+							break
+						case "ResourceStatisticsModule":
+							let resourceType = jsonData.resourceType
+							let percentage = jsonData.percentage
+							switch (resourceType){
+								case "bandwidth":
+									data[0].value = percentage
+									break
+								case "uplink":
+									data[1].value = percentage
+									break
+								case "downlink":
+									data[2].value = percentage
+									break
+								case "comPower":
+									data[3].value = percentage
+									break
+								default:
+									break
+							}
+							//重新渲染图
+							myChart1.setOption(getResRadarOption(data))
+							myChart2.setOption(getResRadarOption(data))
+					}
+				};
+			});
+
+			//资源使用情况雷达图
+			let myChart1 = echarts.init(document.getElementById('resourceUsage1'));
+			myChart1.setOption(resourceUsageOption);
+			let myChart2 = echarts.init(document.getElementById('resourceUsage2'));
+			myChart2.setOption(resourceUsageOption); //弄一个一样的图表，添加一个滑动效果，可以自定义图表2
+			let mySwiper1 = new Swiper('.visual_swiper', {
+				speed:800,//可选选项，滑动速度
+				autoplay: {
+					delay: 5000,//1秒切换一次
+				},
+			})
+
+			/********** 浏览器窗口改变时，重置报表大小 ****************/
+			window.onresize = function() {
+				// countyMap.resize();
+			}
+		</script>
+	</body>
+</html>
