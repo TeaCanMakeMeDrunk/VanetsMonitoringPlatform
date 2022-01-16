@@ -18,6 +18,7 @@ var (
 	//每设计有一个功能模块就添加一个channel监听信息，通过websocket发送给前端
 	devBroadcast = make(chan models.DevWebsocketMsg)
 	resBroadcast = make(chan models.ResWebsocketMsg)
+	reqBroadcast = make(chan models.ReqWebsocketMsg)
 )
 
 func (this *MyWebSocketController) Get() {

@@ -2,9 +2,9 @@ package models
 
 // StatisticalVariables 统计变量类 先不作持久化。
 type StatisticalVariables struct {
-	//请求数
+	//总的请求数
 	ReqNum int
-	//请求完成数
+	//已完成的请求数
 	ReqComNum int
 	//设备在线数
 	TotalDevOnlineNum int
@@ -38,20 +38,20 @@ type StatisticalVariables struct {
 
 // StaVariables 定义一个全局变量,暂未做持久化处理
 var StaVariables = StatisticalVariables{
-	ReqNum:             0,
-	ReqComNum:          0,
-	TotalDevOnlineNum:  0,
-	TotalDevExcNum:     0,
-	ObuOnlineNum:       0,
-	ObuExcNum:          0,
-	RsuOnlineNum:       0,
-	RsuExcNum:          0,
-	MecOnlineNum:       0,
-	MecExcNum:          0,
-	CameraOnlineNum:    0,
-	CameraExcNum:       0,
-	CorePadOnlineNum:   0,
-	CorePadExcNum:      0,
-	EdgePadOnlineNum:   0,
-	EdgePadExcNum:      0,
+	ReqNum:            0,
+	ReqComNum:         0,
+	TotalDevOnlineNum: 0,
+	TotalDevExcNum:    0,
+	ObuOnlineNum:      0,
+	ObuExcNum:         0,
+	RsuOnlineNum:      0,
+	RsuExcNum:         0,
+	MecOnlineNum:      0,
+	MecExcNum:         0,
+	CameraOnlineNum:   0,
+	CameraExcNum:      0,
+	CorePadOnlineNum:  0,
+	CorePadExcNum:     0,
+	EdgePadOnlineNum:  0,
+	EdgePadExcNum:     0,
 }

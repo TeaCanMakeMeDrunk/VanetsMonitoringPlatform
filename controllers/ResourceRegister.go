@@ -15,7 +15,7 @@ type ResourceRegisterController struct {
 // @Description 带宽、算力等资源使用情况登记调用此API进行登记
 // @Author Mateo
 // @Date 11:03 2022/1/13
-// 设备在线登记使用的json数据格式
+// 使用的json数据格式
 // {
 // 	 "resourceType":"bandwidth", //bandwidth可替换为comPower,uplink,downlink
 // 	 "percentage":10   			//资源使用百分比

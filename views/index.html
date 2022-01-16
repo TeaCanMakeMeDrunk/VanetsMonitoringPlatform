@@ -54,7 +54,7 @@
 								<div class="visual_conTop_box visual_conTop1">
 									<div>
 										<h3>车载请求数</h3>
-										<p class="p_css_center">0</p>
+										<p class="p_css_center" id="req_num">0</p>
 <!--										<div class="conTop_smil">-->
 <!--											<a class="sz">日环比:<span>+3%</span><i class="fa fa-long-arrow-up"></i></a>-->
 <!--											<a class="xd">周环比:<span>-2%</span><i class="fa fa-long-arrow-down"></i></a>-->
@@ -64,10 +64,10 @@
 								<div class="visual_conTop_box visual_conTop2">
 									<div>
 										<h3>请求完成数</h3>
-										<p class="p_css">0</p>
+										<p class="p_css" id="req_com_num">0</p>
 										<div class="conTop_smil">
 											<a class="null">null</a>
-											<a class="xd">服务率<span>0%</span><i class="fa fa-long-arrow-down"></i></a>-->
+											<a class="xd">服务率<span id="service_ratio">0%</span><i class="fa fa-long-arrow-down"></i></a>-->
 										</div>
 									</div>
 								</div>
@@ -430,6 +430,15 @@
 							//重新渲染图
 							myChart1.setOption(getResRadarOption(data))
 							myChart2.setOption(getResRadarOption(data))
+							break
+						case "ServiceReqStatisticsModule":
+							let reqNum = "req_num"
+							let reqComNum = "req_com_num"
+							let serviceRatio = "service_ratio"
+							$("#"+reqNum).text(jsonData.reqNum)
+							$("#"+reqComNum).text(jsonData.reqComNum)
+							$("#"+serviceRatio).text((jsonData.reqComNum/jsonData.reqNum*100).toFixed(2) + "%")
+							break
 					}
 				};
 			});
