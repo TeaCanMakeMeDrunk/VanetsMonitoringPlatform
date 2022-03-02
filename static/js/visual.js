@@ -1,9 +1,3 @@
-//第一类动态曲线调用
-dynamic_line("line1", "line2", "left");
-dynamic_line("line3", "line4", "left");
-dynamic_line("line5", "line6", "right");
-dynamic_line("line7", "line8", "right");
-
 //摄像头-OBU-RSU之间的线特效js
 function dynamic_line(line_id1, line_id2, type) {
     //动态线的逻辑, 对应的div两个动画，底层是入队列顺序执行

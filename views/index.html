@@ -385,6 +385,12 @@
 		</div>
 		
 		<script type="text/javascript">
+			//第一类动态曲线调用
+			dynamic_line("line1", "line2", "left");
+			dynamic_line("line3", "line4", "left");
+			dynamic_line("line5", "line6", "right");
+			dynamic_line("line7", "line8", "right");
+
 			//websocket
 			$(function() {
 				let ws = new WebSocket('ws://' + window.location.host + '/ws');
